@@ -43,24 +43,44 @@ nav{display:flex;align-items:center;justify-content:space-between;height:60px}
 .tog{display:none;background:none;border:1px solid var(--k);padding:6px 12px;font:600 14px inherit;cursor:pointer}
 
 /* slider */
-.slider{position:relative;overflow:hidden;background:var(--k);min-height:80vh}
-.slider-container{position:relative;width:100%;height:100%}
-.slide{position:absolute;inset:0;opacity:0;transition:opacity 0.6s ease-in-out}
-.slide.active{opacity:1;z-index:1}
-.slide-bg{position:absolute;inset:0}
-.slide-bg img{width:100%;height:100%;object-fit:cover}
-.slide-bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
-.slide-content{position:relative;z-index:2;color:var(--w);max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;flex-direction:column;justify-content:center;min-height:80vh}
-.slide-content h1{font-size:clamp(36px,5vw,64px);margin-bottom:18px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
-.slide-content p{max-width:52ch;margin-bottom:16px;font-size:18px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
-.slide-content .links{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:12px}
-.slider-prev,.slider-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.2);color:var(--w);border:0;width:50px;height:50px;font-size:32px;cursor:pointer;border-radius:50%;transition:background .3s}
-.slider-prev:hover,.slider-next:hover{background:rgba(255,255,255,.4)}
-.slider-prev{left:20px}
-.slider-next{right:20px}
-.slider-dots{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:10px}
-.slider-dots button{width:12px;height:12px;border-radius:50%;border:0;background:rgba(255,255,255,.4);cursor:pointer;padding:0}
-.slider-dots button.active{background:var(--w)}
+.slider{position:relative;width:100%;height:500px;overflow:hidden}
+.slider-track{display:flex;width:100%;height:100%;transition:transform 0.5s ease-in-out}
+.slide{min-width:100%;height:100%;position:relative}
+.slide img{width:100%;height:100%;object-fit:cover}
+.slide-content{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(0,0,0,0.4);color:var(--w);text-align:center;padding:24px}
+.slide-content h2{font-size:clamp(32px,4vw,48px);margin-bottom:16px;text-shadow:0 2px 8px rgba(0,0,0,0.5)}
+.slide-content p{font-size:clamp(16px,2vw,20px);max-width:60ch;text-shadow:0 1px 4px rgba(0,0,0,0.5)}
+.slider-nav{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:12px;z-index:10}
+.slider-dot{width:12px;height:12px;border-radius:50%;background:rgba(255,255,255,0.5);border:0;cursor:pointer;transition:background 0.3s}
+.slider-dot.active{background:var(--w)}
+.slider-dot:hover{background:rgba(255,255,255,0.8)}
+.slider-arrow{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.8);border:0;width:48px;height:48px;border-radius:50%;cursor:pointer;font-size:24px;display:flex;align-items:center;justify-content:center;transition:background 0.3s;z-index:10}
+.slider-arrow:hover{background:var(--w)}
+.slider-arrow.prev{left:20px}
+.slider-arrow.next{right:20px}
+
+/* hero */
+.hero{display:grid;grid-template-columns:5fr 6fr;gap:48px;align-items:center;padding:48px 0 56px}
+.hero h1{font-size:clamp(34px,4.6vw,52px);margin-bottom:18px}
+.hero p{max-width:46ch;margin-bottom:24px}
+.hero .links{display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.hero .ph{aspect-ratio:4/3.2;border-radius:2px}
+.hero figcaption{font-size:13px;margin-top:6px}
+
+/* newsroom */
+.news{background:var(--w)}
+.news-grid{display:grid;grid-template-columns:7fr 5fr;gap:56px}
+.feat .ph{aspect-ratio:16/9;margin-bottom:18px}
+.feat h3{font-size:26px;margin-bottom:6px}
+.feat .meta{font-weight:600;margin-bottom:10px}
+.feat p{max-width:54ch;margin-bottom:14px}
+.feed{list-style:none}
+.feed li{padding:15px 0;border-top:1px solid var(--s)}
+.feed li:first-child{border-top:0;padding-top:0}
+.feed time{font-size:13px;display:block}
+.feed a{text-decoration:none;font-family:Lora,serif;font-size:18px;line-height:1.35}
+.feed a:hover{text-decoration:underline}
+.feed h3{font-size:20px;margin-bottom:12px}
 
 /* leadership */
 .lead{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px;align-items:start}
@@ -171,42 +191,72 @@ input,select{width:100%;padding:9px 10px;border:1px solid var(--k);background:va
 </nav></div>
 </header>
 
-<main id="main">
-
-<section id="home" class="slider">
- <div class="slider-container" id="slider">
-  <div class="slide active">
-   <div class="slide-bg"><img data-img="hero" alt="Main building of the Pantnagar campus"></div>
+<div class="slider" id="slider">
+ <div class="slider-track" id="sliderTrack">
+  <div class="slide">
+   <img src="https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&w=1600&q=70" alt="GBPUAT Campus">
    <div class="slide-content">
-    <h1>Connecting Generations of Pantnagarians</h1>
-    <p>Bringing together alumni of Govind Ballabh Pant University of Agriculture and Technology to reconnect, share memories, celebrate achievements, and create opportunities for future generations.</p>
-    <div class="links">
-     <button type="button" class="btn" data-open="regD">Register as Alumni</button>
-     <a class="lnk" href="#alumni">Explore Alumni Network</a>
-    </div>
+    <h2>Welcome to Pantnagar4A</h2>
+    <p>Connecting generations of Pantnagarians across the world</p>
    </div>
   </div>
   <div class="slide">
-   <div class="slide-bg"><img data-img="event" alt="Alumni gathering at a university reunion"></div>
+   <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=70" alt="Alumni Gathering">
    <div class="slide-content">
-    <h1>Pantnagarians' Alumni Meet 2026</h1>
-    <p>November 21–22, 2026 · GBPUAT Campus, Pantnagar</p>
-    <p>Two days on campus for batches of every decade to meet old friends, walk through familiar halls, and hear from the university and fellow alumni.</p>
-    <button type="button" class="btn" data-open="regD">Register for the meet</button>
+    <h2>Alumni Meet 2026</h2>
+    <p>Join us for two days of reunion, memories, and celebration</p>
    </div>
   </div>
   <div class="slide">
-   <div class="slide-bg"><img data-img="u1" alt="Alumni achievements"></div>
+   <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1600&q=70" alt="Campus Life">
    <div class="slide-content">
-    <h1>Celebrating Alumni Achievements</h1>
-    <p>Our alumni continue to excel across diverse fields, making significant contributions to agriculture, technology, research, and public service.</p>
-    <a class="lnk" href="#about">Learn More</a>
+    <h2>Celebrate Achievements</h2>
+    <p>Honoring the success of our alumni community</p>
    </div>
   </div>
  </div>
- <button class="slider-prev" id="prevSlide" aria-label="Previous slide">‹</button>
- <button class="slider-next" id="nextSlide" aria-label="Next slide">›</button>
- <div class="slider-dots" id="sliderDots"></div>
+ <button class="slider-arrow prev" aria-label="Previous slide">‹</button>
+ <button class="slider-arrow next" aria-label="Next slide">›</button>
+ <div class="slider-nav" id="sliderNav"></div>
+</div>
+
+<main id="main">
+
+<section id="home" class="wrap hero">
+ <div>
+  <h1>Connecting Generations of Pantnagarians</h1>
+  <p>Bringing together alumni of Govind Ballabh Pant University of Agriculture and Technology to reconnect, share memories, celebrate achievements, and create opportunities for future generations.</p>
+  <div class="links">
+   <button type="button" class="btn" data-open="regD">Register as Alumni</button>
+   <a class="lnk" href="#alumni">Explore Alumni Network</a>
+  </div>
+ </div>
+ <figure>
+  <div class="ph"><img data-img="hero" alt="Main building of the Pantnagar campus"></div>
+  <figcaption>The GBPUAT campus, Pantnagar (temporary photograph)</figcaption>
+ </figure>
+</section>
+
+<section id="events" class="sec news">
+ <div class="wrap news-grid">
+  <article class="feat">
+   <div class="ph"><img data-img="event" alt="Alumni gathering at a university reunion"></div>
+   <h3>Pantnagarians' Alumni Meet 2026</h3>
+   <p class="meta">November 21–22, 2026 · GBPUAT Campus, Pantnagar</p>
+   <p>Two days on campus for batches of every decade to meet old friends, walk through familiar halls, and hear from the university and fellow alumni. Registration is open to all alumni and their families.</p>
+   <button type="button" class="lnk xbtn" data-open="regD">Register for the meet</button> &nbsp; <a class="lnk" href="#events">View details</a>
+  </article>
+  <div>
+   <h3 style="margin-bottom:14px">Newsroom</h3>
+   <ul class="feed">
+    <li><time datetime="2026-10-15">15 October 2026</time><a href="#">Schedule for the Alumni Meet 2026 announced</a></li>
+    <li><time datetime="2026-10-02">2 October 2026</time><a href="#">Alumni achievements and appointments: September update</a></li>
+    <li><time datetime="2026-09-20">20 September 2026</time><a href="#">4A Newsletter, Autumn issue now available</a></li>
+    <li><time datetime="2026-09-08">8 September 2026</time><a href="#">Association announcement: updating your alumni details</a></li>
+   </ul>
+   <p class="note">Sample headlines for demonstration only.</p>
+  </div>
+ </div>
 </section>
 
 <section id="about" class="sec wrap">
@@ -365,28 +415,65 @@ PEOPLE.forEach(([n,b,id])=>{
 const sel=$('#rb');for(let y=2026;y>=1960;y--){sel.add(new Option(y,y))}
 
 // slider
-const slider=$('#slider'),slides=slider.querySelectorAll('.slide'),dots=$('#sliderDots');
-let currentSlide=0,slideInterval;
-function showSlide(n){
- slides.forEach(s=>s.classList.remove('active'));
- dots.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
- currentSlide=(n+slides.length)%slides.length;
- slides[currentSlide].classList.add('active');
- dots.children[currentSlide].classList.add('active');
+const slider=$('#slider'),track=$('#sliderTrack'),nav=$('#sliderNav');
+const slides=track.querySelectorAll('.slide');
+let currentSlide=0;
+let autoSlideInterval;
+
+function updateSlider(){
+ track.style.transform=`translateX(-${currentSlide * 100}%)`;
+ nav.querySelectorAll('.slider-dot').forEach((dot,i)=>dot.classList.toggle('active',i===currentSlide));
 }
-function nextSlide(){showSlide(currentSlide+1)}
-function prevSlide(){showSlide(currentSlide-1)}
-$('#nextSlide').onclick=()=>{nextSlide();resetInterval()};
-$('#prevSlide').onclick=()=>{prevSlide();resetInterval()};
-function startSlide(){slideInterval=setInterval(nextSlide,5000)}
-function resetInterval(){clearInterval(slideInterval);startSlide()}
+
+function nextSlide(){
+ currentSlide=(currentSlide+1)%slides.length;
+ updateSlider();
+}
+
+function prevSlide(){
+ currentSlide=(currentSlide-1+slides.length)%slides.length;
+ updateSlider();
+}
+
+function goToSlide(index){
+ currentSlide=index;
+ updateSlider();
+}
+
+// create dots
 slides.forEach((_,i)=>{
- const b=document.createElement('button');
- b.onclick=()=>{showSlide(i);resetInterval()};
- dots.appendChild(b);
+ const dot=document.createElement('button');
+ dot.className='slider-dot';
+ dot.setAttribute('aria-label',`Go to slide ${i+1}`);
+ dot.onclick=()=>goToSlide(i);
+ nav.appendChild(dot);
 });
-showSlide(0);
-startSlide();
+
+// arrow buttons
+slider.querySelector('.prev').onclick=prevSlide;
+slider.querySelector('.next').onclick=nextSlide;
+
+// auto-slide
+function startAutoSlide(){
+ autoSlideInterval=setInterval(nextSlide,5000);
+}
+function stopAutoSlide(){
+ clearInterval(autoSlideInterval);
+}
+startAutoSlide();
+slider.onmouseenter=stopAutoSlide;
+slider.onmouseleave=startAutoSlide;
+
+// touch/swipe support
+let touchStartX=0;
+slider.addEventListener('touchstart',e=>touchStartX=e.touches[0].clientX);
+slider.addEventListener('touchend',e=>{
+ const touchEndX=e.changedTouches[0].clientX;
+ if(touchStartX-touchEndX>50)nextSlide();
+ else if(touchEndX-touchStartX>50)prevSlide();
+});
+
+updateSlider();
 
 // nav
 const tog=$('#tog'),menu=$('#menu');
