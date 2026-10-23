@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pantnagar4A – Alumni Alma Mater Advancement Association, GBPUAT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--g:#45634F;--s:#DCE4D9;--iv:#F7F6F0;--w:#FFFFFF;--k:#000000;--max:1120px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{font:400 16px/1.65 "Source Sans 3",Lato,Arial,sans-serif;background:var(--iv);color:var(--k)}
+h1,h2,h3{font-family:Lora,Georgia,serif;font-weight:500;line-height:1.2}
+a{color:inherit}
+img{display:block;max-width:100%}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+.ph{background:var(--s);overflow:hidden;position:relative}
+.ph img{width:100%;height:100%;object-fit:cover}
+.ph img.bad{display:none}
+:focus-visible{outline:3px solid var(--g);outline-offset:2px}
+.dark :focus-visible,footer :focus-visible{outline-color:var(--w)}
+.sec{padding:72px 0}
+.sec h2{font-size:clamp(26px,3.4vw,34px);margin-bottom:8px}
+.sub{max-width:58ch;margin-bottom:32px}
+.lnk{font-weight:600;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.lnk:hover{text-decoration-thickness:2px}
+.btn{display:inline-block;background:var(--g);color:var(--w);border:0;padding:11px 22px;font:600 15px "Source Sans 3",sans-serif;cursor:pointer;text-decoration:none;border-radius:3px}
+.btn:hover{background:#365040}
+.skip{position:absolute;left:-999px;background:var(--w);padding:8px}.skip:focus{left:8px;top:8px;z-index:99}
+
+/* nav */
+header{background:var(--iv);border-bottom:1px solid var(--s);position:sticky;top:0;z-index:20}
+nav{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font:600 22px Lora,serif;text-decoration:none}
+.logo small{font:400 12px "Source Sans 3",sans-serif;display:block;line-height:1;margin-top:2px}
+.menu{display:flex;gap:26px;list-style:none;align-items:center}
+.menu a,.menu button{text-decoration:none;font-size:15px;background:none;border:0;cursor:pointer;font-family:inherit;color:inherit}
+.menu a:hover,.menu button:hover{text-decoration:underline;text-underline-offset:4px}
+.menu .reg{background:var(--g);color:var(--w);padding:6px 16px;border-radius:3px}
+.menu .reg:hover{text-decoration:none;background:#365040}
+.tog{display:none;background:none;border:1px solid var(--k);padding:6px 12px;font:600 14px inherit;cursor:pointer}
+
+/* slider */
+.slider{position:relative;overflow:hidden;background:var(--k);min-height:80vh}
+.slider-container{position:relative;width:100%;height:100%}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 0.6s ease-in-out}
+.slide.active{opacity:1;z-index:1}
+.slide-bg{position:absolute;inset:0}
+.slide-bg img{width:100%;height:100%;object-fit:cover}
+.slide-bg::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.45)}
+.slide-content{position:relative;z-index:2;color:var(--w);max-width:var(--max);margin:0 auto;padding:0 24px;display:flex;flex-direction:column;justify-content:center;min-height:80vh}
+.slide-content h1{font-size:clamp(36px,5vw,64px);margin-bottom:18px;text-shadow:0 2px 8px rgba(0,0,0,.5)}
+.slide-content p{max-width:52ch;margin-bottom:16px;font-size:18px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.slide-content .links{display:flex;gap:20px;align-items:center;flex-wrap:wrap;margin-top:12px}
+.slider-prev,.slider-next{position:absolute;top:50%;transform:translateY(-50%);z-index:10;background:rgba(255,255,255,.2);color:var(--w);border:0;width:50px;height:50px;font-size:32px;cursor:pointer;border-radius:50%;transition:background .3s}
+.slider-prev:hover,.slider-next:hover{background:rgba(255,255,255,.4)}
+.slider-prev{left:20px}
+.slider-next{right:20px}
+.slider-dots{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);z-index:10;display:flex;gap:10px}
+.slider-dots button{width:12px;height:12px;border-radius:50%;border:0;background:rgba(255,255,255,.4);cursor:pointer;padding:0}
+.slider-dots button.active{background:var(--w)}
+
+/* leadership */
+.lead{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 24px;align-items:start}
+.lead figure:nth-child(1){grid-column:span 2;display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:end}
+.lead .ph{aspect-ratio:4/5}
+.lead figure:nth-child(1) .ph{aspect-ratio:4/5}
+.lead figure:nth-child(n+2){margin-top:36px}
+.lead figcaption b{display:block;font:500 18px Lora,serif}
+.lead figcaption span{font-size:14px}
+.note{font-size:13px;margin-top:22px}
+
+/* university */
+.uni{background:var(--s)}
+.uni-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;grid-template-rows:200px 200px;gap:14px}
+.uni a{position:relative;display:block;text-decoration:none;color:var(--w)}
+.uni a:first-child{grid-row:span 2}
+.uni a .ph{position:absolute;inset:0;background:var(--g)}
+.uni a::after{content:"";position:absolute;inset:0;background:rgba(0,0,0,.42)}
+.uni a span{position:absolute;left:16px;bottom:14px;z-index:2;font:500 19px Lora,serif}
+.uni a:hover span{text-decoration:underline}
+
+/* resources */
+.res{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;align-items:start}
+.res a{text-decoration:none}
+.res .ph{aspect-ratio:3/2;margin-bottom:10px}
+.res .res-b .ph{aspect-ratio:1/1}
+.res .res-c{margin-top:40px}
+.res b{display:block;font:500 18px Lora,serif}
+.res a:hover b{text-decoration:underline}
+.res span{font-size:14px}
+
+/* gallery */
+.gal-sec{background:var(--w)}
+.gal-head{display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.strip{display:flex;gap:14px;overflow-x:auto;padding:0 max(24px,calc((100vw - var(--max))/2 + 24px)) 16px;scroll-snap-type:x proximity}
+.strip button{flex:none;border:0;padding:0;cursor:zoom-in;scroll-snap-align:start;background:none;text-align:left}
+.strip .ph{height:280px}
+.strip button p{font-size:13px;margin-top:6px}
+
+/* members */
+.mem{display:grid;grid-template-columns:repeat(6,1fr);gap:26px 18px}
+.mem .ph{aspect-ratio:1/1;border-radius:50%;margin-bottom:8px}
+.mem b{display:block;font-size:15px;line-height:1.3}
+.mem span{font-size:13px}
+
+/* footer */
+footer{background:var(--g);color:var(--w);padding:52px 0 28px}
+.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:32px}
+footer h3{font:600 15px "Source Sans 3",sans-serif;margin-bottom:10px}
+footer ul{list-style:none}footer li{margin-bottom:6px}
+footer a{text-decoration:none}footer a:hover{text-decoration:underline}
+.fine{border-top:1px solid rgba(255,255,255,.35);margin-top:32px;padding-top:16px;font-size:13px}
+
+/* dialogs */
+dialog{margin:auto;border:0;padding:30px;width:min(420px,92vw);background:var(--w);color:var(--k);border-radius:3px}
+dialog::backdrop{background:rgba(0,0,0,.55)}
+dialog h2{font-size:24px;margin-bottom:6px}
+.demo{background:var(--s);padding:8px 12px;font-size:13px;margin:10px 0 16px}
+label{display:block;font-size:14px;font-weight:600;margin-top:12px}
+input,select{width:100%;padding:9px 10px;border:1px solid var(--k);background:var(--w);font:inherit;margin-top:4px;border-radius:2px}
+.err{font-size:13px;min-height:18px;font-weight:600}
+.actions{display:flex;gap:18px;align-items:center;margin-top:18px}
+.xbtn{background:none;border:0;font:inherit;text-decoration:underline;cursor:pointer}
+.ok{background:var(--g);color:var(--w);padding:12px;margin-top:14px;font-size:14px}
+#lb{width:min(900px,94vw);padding:14px;background:var(--w)}
+#lb img{width:100%;max-height:74vh;object-fit:contain;background:var(--s)}
+#lb p{margin:10px 0 8px;font-size:14px}
+
+@media(max-width:900px){
+ .hero,.news-grid{grid-template-columns:1fr;gap:32px}
+ .lead{grid-template-columns:1fr 1fr}.lead figure:nth-child(1){grid-column:span 2}.lead figure:nth-child(n+2){margin-top:0}
+ .uni-grid{grid-template-columns:1fr 1fr;grid-template-rows:200px 150px 150px}.uni a:first-child{grid-column:span 2;grid-row:auto}
+ .res{grid-template-columns:1fr 1fr}.res .res-c{margin-top:0}
+ .mem{grid-template-columns:repeat(4,1fr)}
+ .tog{display:block}
+ .menu{display:none;position:absolute;top:60px;left:0;right:0;background:var(--iv);flex-direction:column;align-items:stretch;gap:0;padding:8px 24px 16px;border-bottom:1px solid var(--s)}
+ .menu.open{display:flex}.menu li{padding:10px 0;border-bottom:1px solid var(--s)}
+ .menu .reg{display:inline-block}
+}
+@media(max-width:560px){
+ .sec{padding:52px 0}
+ .lead figure:nth-child(1){grid-template-columns:1fr}
+ .uni-grid{grid-template-columns:1fr;grid-template-rows:none;grid-auto-rows:150px}.uni a:first-child{grid-column:auto}
+ .res{grid-template-columns:1fr}
+ .mem{grid-template-columns:repeat(3,1fr)}
+ .foot{grid-template-columns:1fr}
+ .strip .ph{height:210px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header>
+<div class="wrap"><nav aria-label="Main">
+ <a class="logo" href="#home" aria-label="Pantnagar4A home">Pantnagar4A<small>Alumni Alma Mater Advancement Association</small></a>
+ <button class="tog" id="tog" aria-expanded="false" aria-controls="menu">Menu</button>
+ <ul class="menu" id="menu">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#about">About 4A</a></li>
+  <li><a href="#alumni">Alumni</a></li>
+  <li><a href="#events">Events</a></li>
+  <li><a href="#gallery">Gallery</a></li>
+  <li><button type="button" class="reg" data-open="regD">Register</button></li>
+  <li><button type="button" data-open="logD">Login</button></li>
+ </ul>
+</nav></div>
+</header>
+
+<main id="main">
+
+<section id="home" class="slider">
+ <div class="slider-container" id="slider">
+  <div class="slide active">
+   <div class="slide-bg"><img data-img="hero" alt="Main building of the Pantnagar campus"></div>
+   <div class="slide-content">
+    <h1>Connecting Generations of Pantnagarians</h1>
+    <p>Bringing together alumni of Govind Ballabh Pant University of Agriculture and Technology to reconnect, share memories, celebrate achievements, and create opportunities for future generations.</p>
+    <div class="links">
+     <button type="button" class="btn" data-open="regD">Register as Alumni</button>
+     <a class="lnk" href="#alumni">Explore Alumni Network</a>
+    </div>
+   </div>
+  </div>
+  <div class="slide">
+   <div class="slide-bg"><img data-img="event" alt="Alumni gathering at a university reunion"></div>
+   <div class="slide-content">
+    <h1>Pantnagarians' Alumni Meet 2026</h1>
+    <p>November 21–22, 2026 · GBPUAT Campus, Pantnagar</p>
+    <p>Two days on campus for batches of every decade to meet old friends, walk through familiar halls, and hear from the university and fellow alumni.</p>
+    <button type="button" class="btn" data-open="regD">Register for the meet</button>
+   </div>
+  </div>
+  <div class="slide">
+   <div class="slide-bg"><img data-img="u1" alt="Alumni achievements"></div>
+   <div class="slide-content">
+    <h1>Celebrating Alumni Achievements</h1>
+    <p>Our alumni continue to excel across diverse fields, making significant contributions to agriculture, technology, research, and public service.</p>
+    <a class="lnk" href="#about">Learn More</a>
+   </div>
+  </div>
+ </div>
+ <button class="slider-prev" id="prevSlide" aria-label="Previous slide">‹</button>
+ <button class="slider-next" id="nextSlide" aria-label="Next slide">›</button>
+ <div class="slider-dots" id="sliderDots"></div>
+</section>
+
+<section id="about" class="sec wrap">
+ <h2>Association leadership</h2>
+ <p class="sub">The people who guide and coordinate the association. Names, photographs and designations below are placeholders until official details are supplied.</p>
+ <div class="lead">
+  <figure><div class="ph"><img data-img="p1" alt="Placeholder portrait"></div>
+   <figcaption><b>Name to be added</b><span>Vice-Chancellor, GBPUAT<br>Patron of the association</span></figcaption></figure>
+  <figure><div class="ph"><img data-img="p2" alt="Placeholder portrait"></div>
+   <figcaption><b>Name to be added</b><span>Chief Coordinator</span></figcaption></figure>
+  <figure><div class="ph"><img data-img="p3" alt="Placeholder portrait"></div>
+   <figcaption><b>Name to be added</b><span>Secretary</span></figcaption></figure>
+  <figure><div class="ph"><img data-img="p4" alt="Placeholder portrait"></div>
+   <figcaption><b>Name to be added</b><span>Treasurer</span></figcaption></figure>
+ </div>
+</section>
+
+<section class="sec uni">
+ <div class="wrap">
+  <h2>Connect with the university</h2>
+  <p class="sub">Follow what Pantnagar is doing, and the people who make it what it is.</p>
+  <div class="uni-grid">
+   <a href="#"><div class="ph"><img data-img="u1" alt=""></div><span>Alumni Achievements</span></a>
+   <a href="#"><div class="ph"><img data-img="u2" alt=""></div><span>Faculty Achievements</span></a>
+   <a href="#"><div class="ph"><img data-img="u3" alt=""></div><span>University Milestones</span></a>
+   <a href="#" style="grid-column:span 2"><div class="ph"><img data-img="u4" alt=""></div><span>Connect With the University</span></a>
+  </div>
+ </div>
+</section>
+
+<section class="sec wrap">
+ <h2>Campus resources</h2>
+ <p class="sub">Planning a visit, or just curious how the campus looks today?</p>
+ <div class="res">
+  <a href="#" class="res-a"><div class="ph"><img data-img="r1" alt="Campus map"></div><b>Campus Map</b><span>Find departments, hostels and the Alumni Meet venue.</span></a>
+  <a href="#" class="res-b"><div class="ph"><img data-img="r2" alt="Aerial view of campus"></div><b>360° Campus View</b><span>Walk the campus from wherever you are.</span></a>
+  <a href="#" class="res-c"><div class="ph"><img data-img="r3" alt="Students on campus"></div><b>Videos at GBPUAT</b><span>Films on campus life, research and events.</span></a>
+ </div>
+</section>
+
+<section id="gallery" class="sec gal-sec">
+ <div class="wrap gal-head">
+  <div><h2>Gallery</h2><p>Reunions, workshops, award days and Foundation Week. Select a photo to enlarge it.</p></div>
+  <a class="lnk" href="#gallery">View All Photos</a>
+ </div>
+ <div class="strip" id="strip" role="list"></div>
+</section>
+
+<section id="alumni" class="sec wrap">
+ <div style="display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap;margin-bottom:28px">
+  <div><h2>Latest alumni members</h2><p>Demo profiles with fictional names, shown until real members are added.</p></div>
+  <a class="lnk" href="#alumni">Browse Alumni Directory</a>
+ </div>
+ <div class="mem" id="mem"></div>
+</section>
+
+</main>
+
+<footer id="contact">
+ <div class="wrap">
+  <div class="foot">
+   <div>
+    <h3 style="font:600 20px Lora,serif">Pantnagar4A</h3>
+    <p>Alumni Alma Mater Advancement Association<br>G.B. Pant University of Agriculture and Technology, Pantnagar</p>
+    <p style="margin-top:10px"><a href="https://www.gbpuat.ac.in" target="_blank" rel="noopener"><u>GBPUAT official website</u></a></p>
+   </div>
+   <div>
+    <h3>Explore</h3>
+    <ul><li><a href="#alumni">Alumni Directory</a></li><li><a href="#events">Events</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul>
+   </div>
+   <div>
+    <h3>Follow</h3>
+    <ul><li><a href="#">Facebook</a></li><li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li><li><a href="#">YouTube</a></li></ul>
+   </div>
+  </div>
+  <p class="fine">© 2026 Pantnagar4A. This page is a demonstration; images and names are temporary.</p>
+ </div>
+</footer>
+
+<dialog id="regD" aria-labelledby="regT">
+ <h2 id="regT">Register as Alumni</h2>
+ <p class="demo">Demo only. Nothing is sent or saved, and no account is created.</p>
+ <form novalidate data-form="reg">
+  <label for="rn">Full name</label><input id="rn" name="name" autocomplete="name">
+  <label for="re">Email</label><input id="re" name="email" type="email" autocomplete="email">
+  <label for="rb">Graduation batch</label><select id="rb" name="batch"><option value="">Select year</option></select>
+  <p class="err" role="alert"></p>
+  <div class="actions"><button class="btn" type="submit">Submit demo</button><button class="xbtn" type="button" data-close>Close</button></div>
+ </form>
+</dialog>
+
+<dialog id="logD" aria-labelledby="logT">
+ <h2 id="logT">Login</h2>
+ <p class="demo">Demo only. No real sign-in takes place.</p>
+ <form novalidate data-form="log">
+  <label for="le">Email</label><input id="le" name="email" type="email" autocomplete="email">
+  <label for="lp">Password</label><input id="lp" name="pw" type="password" autocomplete="current-password">
+  <p class="err" role="alert"></p>
+  <div class="actions"><button class="btn" type="submit">Try demo login</button><button class="xbtn" type="button" data-close>Close</button></div>
+ </form>
+</dialog>
+
+<dialog id="lb" aria-label="Photo preview">
+ <img id="lbi" alt=""><p id="lbc"></p>
+ <button class="btn" type="button" data-close>Close</button>
+</dialog>
+
+<script>
+// ---- Replace image URLs here ----
+const U=(id,w)=>`https://images.unsplash.com/photo-${id}?auto=format&fit=crop&w=${w||800}&q=70`;
+const IMG={
+ hero:U('1562774053-701939374585',1200), event:U('1492684223066-81342ee5ff30',1000),
+ p1:U('1560250097-0b93528c311a',500), p2:U('1580489944761-15a19d654956',500),
+ p3:U('1519085360753-af0119f7cbe7',500), p4:U('1573496359142-b8d87734a5a2',500),
+ u1:U('1523050854058-8df90110c9f1',700), u2:U('1523580846011-d3a5bc25702b',700),
+ u3:U('1541339907198-e08756dedf3f',700), u4:U('1562774053-701939374585',900),
+ r1:U('1524661135-423995f22d0b',700), r2:U('1541339907198-e08756dedf3f',600), r3:U('1523580846011-d3a5bc25702b',700)
+};
+const GALLERY=[
+ {id:'1511632765486-a01980e01a18',cap:'Alumni meet and reunion',w:420},
+ {id:'1540575467063-178a50c2df87',cap:'Workshop and conference',w:360},
+ {id:'1523050854058-8df90110c9f1',cap:'Award ceremony',w:300},
+ {id:'1529156069898-49953e39b3ac',cap:'Reunion lunch',w:380},
+ {id:'1517457373958-b7bdd4587205',cap:'University Foundation Week',w:340},
+ {id:'1475721027785-f74eccf877e2',cap:'Conference session',w:400}
+];
+const PEOPLE=[
+ ['Aarav Rawat','1987','1507003211169-0a1dd7228f2d'],['Meera Joshi','1995','1494790108377-be9c29b29330'],
+ ['Kunal Bisht','2003','1500648767791-00dcc994a43e'],['Sneha Negi','2011','1438761681033-6461ffad8d80'],
+ ['Rohan Pant','1999','1472099645785-5658abf4ff4e'],['Isha Kandpal','2008','1544005313-94ddf0286df2'],
+ ['Vikram Chauhan','1991','1506794778202-cad84cf45f1d'],['Pooja Tiwari','2015','1531123897727-8f129e1688ce'],
+ ['Dev Bhatt','2019','1560250097-0b93528c311a'],['Anjali Rana','2001','1580489944761-15a19d654956'],
+ ['Harsh Mehra','2013','1519085360753-af0119f7cbe7'],['Neha Sah','1993','1573496359142-b8d87734a5a2']
+];
+const $=(s,r=document)=>r.querySelector(s);
+function mk(src,alt){const i=new Image();i.alt=alt||'';i.loading='lazy';i.onerror=()=>i.classList.add('bad');i.src=src;return i}
+document.querySelectorAll('[data-img]').forEach(el=>{const a=el.alt;el.replaceWith(mk(IMG[el.dataset.img],a))});
+
+// gallery
+const strip=$('#strip'),lb=$('#lb');
+GALLERY.forEach(g=>{
+ const b=document.createElement('button');b.type='button';b.setAttribute('role','listitem');
+ const p=document.createElement('div');p.className='ph';p.style.width=g.w+'px';p.appendChild(mk(U(g.id,900),g.cap));
+ const c=document.createElement('p');c.textContent=g.cap;b.append(p,c);
+ b.onclick=()=>{const im=p.querySelector('img');$('#lbi').src=U(g.id,1600);$('#lbi').alt=g.cap;$('#lbc').textContent=g.cap;lb.showModal()};
+ strip.appendChild(b);
+});
+// members
+PEOPLE.forEach(([n,b,id])=>{
+ const d=document.createElement('div');
+ const p=document.createElement('div');p.className='ph';p.appendChild(mk(U(id,300),n+' (demo)'));
+ d.append(p);d.insertAdjacentHTML('beforeend',`<b>${n}</b><span>Batch of ${b}</span>`);
+ $('#mem').appendChild(d);
+});
+// batch options
+const sel=$('#rb');for(let y=2026;y>=1960;y--){sel.add(new Option(y,y))}
+
+// slider
+const slider=$('#slider'),slides=slider.querySelectorAll('.slide'),dots=$('#sliderDots');
+let currentSlide=0,slideInterval;
+function showSlide(n){
+ slides.forEach(s=>s.classList.remove('active'));
+ dots.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+ currentSlide=(n+slides.length)%slides.length;
+ slides[currentSlide].classList.add('active');
+ dots.children[currentSlide].classList.add('active');
+}
+function nextSlide(){showSlide(currentSlide+1)}
+function prevSlide(){showSlide(currentSlide-1)}
+$('#nextSlide').onclick=()=>{nextSlide();resetInterval()};
+$('#prevSlide').onclick=()=>{prevSlide();resetInterval()};
+function startSlide(){slideInterval=setInterval(nextSlide,5000)}
+function resetInterval(){clearInterval(slideInterval);startSlide()}
+slides.forEach((_,i)=>{
+ const b=document.createElement('button');
+ b.onclick=()=>{showSlide(i);resetInterval()};
+ dots.appendChild(b);
+});
+showSlide(0);
+startSlide();
+
+// nav
+const tog=$('#tog'),menu=$('#menu');
+tog.onclick=()=>{const o=menu.classList.toggle('open');tog.setAttribute('aria-expanded',o)};
+menu.addEventListener('click',e=>{if(e.target.closest('a,button')){menu.classList.remove('open');tog.setAttribute('aria-expanded',false)}});
+
+// dialogs
+document.addEventListener('click',e=>{
+ const o=e.target.closest('[data-open]');if(o){const d=document.getElementById(o.dataset.open);d.querySelectorAll('.ok').forEach(x=>x.remove());d.showModal();return}
+ if(e.target.closest('[data-close]'))e.target.closest('dialog').close();
+ if(e.target.tagName==='DIALOG')e.target.close();
+});
+const okEmail=v=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+document.querySelectorAll('form[data-form]').forEach(f=>f.addEventListener('submit',e=>{
+ e.preventDefault();const er=$('.err',f);let m='';
+ const v=n=>f.elements[n].value.trim();
+ if(f.dataset.form==='reg'){
+  if(v('name').length<2)m='Enter your full name.';
+  else if(!okEmail(v('email')))m='Enter a valid email address.';
+  else if(!v('batch'))m='Select your graduation batch.';
+ }else{
+  if(!okEmail(v('email')))m='Enter a valid email address.';
+  else if(v('pw').length<6)m='Password must be at least 6 characters.';
+ }
+ er.textContent=m;if(m)return;
+ f.querySelectorAll('.ok').forEach(x=>x.remove());
+ f.insertAdjacentHTML('beforeend','<p class="ok">Form checked. This is a demo, so nothing was submitted and no account or session exists.</p>');
+ f.reset();
+}));
+</script>
+</body>
+</html>
