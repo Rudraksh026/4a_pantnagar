@@ -1,5 +1,5 @@
-import Photo from "./Photo";
-import { images, leadership } from "./site-data";
+import Photo from "../shared/Photo";
+import { images, leadership } from "../../data/site-data";
 
 export default function LeadershipSection() {
   return (

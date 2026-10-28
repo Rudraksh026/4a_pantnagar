@@ -1,17 +1,17 @@
 "use client";
 
 import { useRef } from "react";
-import AlumniSection from "./components/AlumniSection";
-import DemoDialog from "./components/DemoDialog";
-import EventsSection from "./components/EventsSection";
-import Footer from "./components/Footer";
-import GallerySection from "./components/GallerySection";
-import Header from "./components/Header";
-import HeroCarousel from "./components/HeroCarousel";
-import HeroSection from "./components/HeroSection";
-import LeadershipSection from "./components/LeadershipSection";
-import ResourcesSection from "./components/ResourcesSection";
-import UniversitySection from "./components/UniversitySection";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import DemoDialog from "./components/shared/DemoDialog";
+import AlumniSection from "./components/sections/AlumniSection";
+import EventsSection from "./components/sections/EventsSection";
+import GallerySection from "./components/sections/GallerySection";
+import HeroCarousel from "./components/sections/HeroCarousel";
+import HeroSection from "./components/sections/HeroSection";
+import LeadershipSection from "./components/sections/LeadershipSection";
+import ResourcesSection from "./components/sections/ResourcesSection";
+import UniversitySection from "./components/sections/UniversitySection";
 
 export default function Home() {
   const registrationDialog = useRef(null);

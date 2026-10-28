@@ -31,10 +31,16 @@ export const slides = [
     description: "Join us for two days of reunion, memories, and celebration",
   },
   {
-    image: imageUrl("1523050854058-8df90110c9f1", 1600),
-    alt: "Campus Life",
-    title: "Celebrate Achievements",
-    description: "Honoring the success of our alumni community",
+    image: "https://vaave.s3.amazonaws.com/assets/site_content/151565007/banners/851f5ac9941d720844d143ed9cfcf60a_c42b483849c62674d43448159f1dc9ed.jpeg",
+    alt: "",
+    title: "",
+    description: "",
+  },
+  {
+    image: "https://vaave.s3.amazonaws.com/assets/site_content/151565007/banners/851f5ac9941d720844d143ed9cfcf60a_0d9ed7aa69f29023a2845e29efefc947.jpeg",
+    alt: "",
+    title: "",
+    description: "",
   },
 ];
 

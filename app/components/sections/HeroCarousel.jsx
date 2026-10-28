@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Photo from "./Photo";
-import { slides } from "./site-data";
+import Photo from "../shared/Photo";
+import { slides } from "../../data/site-data";
 
 export default function HeroCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);

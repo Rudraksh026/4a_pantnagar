@@ -1,8 +1,8 @@
 "use client";
 
 import { useRef, useState } from "react";
-import Photo from "./Photo";
-import { gallery, imageUrl } from "./site-data";
+import Photo from "../shared/Photo";
+import { gallery, imageUrl } from "../../data/site-data";
 
 export default function GallerySection() {
   const [activePhoto, setActivePhoto] = useState(null);

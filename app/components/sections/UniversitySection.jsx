@@ -1,5 +1,5 @@
-import Photo from "./Photo";
-import { images } from "./site-data";
+import Photo from "../shared/Photo";
+import { images } from "../../data/site-data";
 
 const universityLinks = [
   ["u1", "Alumni Achievements"],

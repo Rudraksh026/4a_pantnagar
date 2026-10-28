@@ -1,5 +1,5 @@
-import Photo from "./Photo";
-import { images } from "./site-data";
+import Photo from "../shared/Photo";
+import { images } from "../../data/site-data";
 
 const resources = [
   { className: "res-a", image: "r1", alt: "Campus map", title: "Campus Map", description: "Find departments, hostels and the Alumni Meet venue." },

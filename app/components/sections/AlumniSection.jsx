@@ -1,5 +1,5 @@
-import Photo from "./Photo";
-import { imageUrl, people } from "./site-data";
+import Photo from "../shared/Photo";
+import { imageUrl, people } from "../../data/site-data";
 
 export default function AlumniSection() {
   return (
