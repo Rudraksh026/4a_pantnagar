@@ -413,7 +413,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: start;
-  /* gap: 28px 24px; */
+  gap: 28px 24px;
 }
 
 .lead figure{
@@ -428,6 +428,9 @@ nav {
   aspect-ratio: 4 / 5;
 }
 
+.ph img {
+  border: 1px solid black;
+}
 
 .lead figcaption b {
   display: block;

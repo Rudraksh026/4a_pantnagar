@@ -12,9 +12,9 @@ export const images = {
   u2: imageUrl("1523580846011-d3a5bc25702b", 700),
   u3: imageUrl("1541339907198-e08756dedf3f", 700),
   u4: imageUrl("1562774053-701939374585", 900),
-  r1: imageUrl("1524661135-423995f22d0b", 700),
-  r2: imageUrl("1541339907198-e08756dedf3f", 600),
-  r3: imageUrl("1523580846011-d3a5bc25702b", 700),
+  r1: "https://vaave.s3.amazonaws.com/block_images/_297ecb7809df56ca0a477adcbf634eca__.png",
+  r2: "https://vaave.s3.amazonaws.com/block_images/_1fff03f743d49986d0466b2b46ecbf74__.jpg",
+  r3: "https://vaave.s3.amazonaws.com/block_images/_f230f90c1fb4635dab8138af22531bc2__.png",
 };
 
 export const slides = [

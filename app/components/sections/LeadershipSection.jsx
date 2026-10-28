@@ -9,7 +9,7 @@ export default function LeadershipSection() {
       <div className="lead">
         {leadership.map((person) => (
           <figure key={person.image}>
-            <div className="ph"><Photo src={images[person.image]} alt={`Portrait of ${person.name}`} /></div>
+            <div className="ph"><Photo className="leader_img" src={images[person.image]} alt={`Portrait of ${person.name}`} /></div>
             <figcaption>
               <b>{person.name}</b>
               <span>{person.title.map((line, index) => (
