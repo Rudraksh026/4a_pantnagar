@@ -8,8 +8,8 @@ const imageUrl = (id, width = 800) =>
 const images = {
   hero: imageUrl("1562774053-701939374585", 1200),
   event: imageUrl("1492684223066-81342ee5ff30", 1000),
-  p1: imageUrl("1560250097-0b93528c311a", 500),
-  p2: imageUrl("1580489944761-15a19d654956", 500),
+  p1: "https://vaave.s3.amazonaws.com/user_files/851f5ac9941d720844d143ed9cfcf60a_de21ad7f4e0e3f0050066cb04029c7c9.jpeg",
+  p2: "https://vaave.s3.amazonaws.com/user_files/851f5ac9941d720844d143ed9cfcf60a_ddcb68840509f983ccad54cd5e8bb008.jpeg",
   p3: imageUrl("1519085360753-af0119f7cbe7", 500),
   p4: imageUrl("1573496359142-b8d87734a5a2", 500),
   u1: imageUrl("1523050854058-8df90110c9f1", 700),
@@ -23,7 +23,7 @@ const images = {
 
 const slides = [
   {
-    image: imageUrl("1562774053-701939374585", 1600),
+    image: "https://vaave.s3.amazonaws.com/assets/site_content/151565007/banners/851f5ac9941d720844d143ed9cfcf60a_604507f7341e57c45cf2528960272593.jpeg",
     alt: "GBPUAT Campus",
     title: "Welcome to Pantnagar4A",
     description: "Connecting generations of Pantnagarians across the world",
@@ -67,10 +67,8 @@ const people = [
 ];
 
 const leadership = [
-  { image: "p1", title: <>Vice-Chancellor, GBPUAT<br />Patron of the association</> },
-  { image: "p2", title: "Chief Coordinator" },
-  { image: "p3", title: "Secretary" },
-  { image: "p4", title: "Treasurer" },
+  { image: "p1", name: "Dr. S.K. Kashyap", title: <>Vice-Chancellor, GBPUAT<br />Patron of the association</> },
+  { image: "p2", name: "Dr. Anil Kumar", title: <>Chief Coordinator & Secretary, <br />Alumni Alma Mater Advancement Association (4A)</> },
 ];
 
 function Photo({ src, alt = "", ...props }) {
@@ -334,7 +332,7 @@ export default function Home() {
             {leadership.map((person) => (
               <figure key={person.image}>
                 <div className="ph"><Photo src={images[person.image]} alt="Placeholder portrait" /></div>
-                <figcaption><b>Name to be added</b><span>{person.title}</span></figcaption>
+                <figcaption><b>{person.name}</b><span>{person.title}</span></figcaption>
               </figure>
             ))}
           </div>

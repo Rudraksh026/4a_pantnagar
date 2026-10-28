@@ -413,10 +413,10 @@ nav {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   align-items: start;
-  gap: 28px 24px;
+  /* gap: 28px 24px; */
 }
 
-.lead figure:first-child {
+.lead figure{
   display: grid;
   grid-column: span 2;
   grid-template-columns: 1fr 1fr;
@@ -428,9 +428,6 @@ nav {
   aspect-ratio: 4 / 5;
 }
 
-.lead figure:nth-child(n + 2) {
-  margin-top: 36px;
-}
 
 .lead figcaption b {
   display: block;
